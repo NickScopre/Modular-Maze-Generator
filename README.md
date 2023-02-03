@@ -21,8 +21,6 @@ Use `python -m venv ./venv` to create a Virtual Environment for the program to r
 Use `venv\Scripts\activate` to activate and enter the Virtual Environment. This is the only step you will have to repeat after initial setup.
 
 7. Install Dependencies
-Use `pip install -r requirements.txt` to download the required packages for GalaxyGen. 
-
-To run GalaxyGen, refer to the [README](README.md). 
+Use `pip install -r requirements.txt` to download the required packages for MMG. 
 
 If you've closed the terminal window and need to return to GalaxyGen, you simply need to navigate back to the same directory and run `venv\Scripts\activate`. (Equivalent to steps 4 and 6) This will put you back into GalaxyGen's environment and allow you to run its scripts.
