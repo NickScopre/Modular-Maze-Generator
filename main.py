@@ -78,10 +78,11 @@ def exportMaze(r, c, pc, wc, t, b, n):
 
     # STEP 6: Export
     print("Exporting...")
-    u = os.path.expanduser("~")
-    p = u + "\\Documents\\Nick's Mazes"
-    if not os.path.exists(p):
-        os.makedirs(p)
+    # u = os.path.expanduser("~")
+    # p = u + "\\Documents\\Nick's Mazes"
+    p = "output"
+    if not os.path.isdir(p):
+        os.makedirs(p)    
     fig_name = "image" + str(n) + ".png"
     img.imsave(os.path.join(p, fig_name), pixel_array5)
 
@@ -151,7 +152,7 @@ while True:
 for i in range(num_mazes):
     print("Generating maze ", i+1, " of ", num_mazes)
     exportMaze(rows, cols, path_color, wall_color, texture, blur, i)
+
 print("Your mazes were saved to:")
-user = os.path.expanduser("~")
-path = user + "\\Documents\\Nick's Mazes"
+path = os.path.join(os.getcwd(), "output")
 print("\t", path)
