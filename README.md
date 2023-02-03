@@ -40,7 +40,7 @@ Use `pip install -r requirements.txt` to download the required packages for MMG.
 If you've closed the terminal window and need to return to GalaxyGen, you simply need to navigate back to the same directory and run `venv\Scripts\activate`. (Equivalent to steps 4 and 6) This will put you back into GalaxyGen's environment and allow you to run its scripts.
 
 ## How it works
-###1. Maze Structure Generation
+### 1. Maze Structure Generation
 After taking in user input, makeMaze is called. The maze is made up of cell objects with 4x4 numpy array of 0s representing path, and 1s representing walls. 
 All of these cells are then put in a 2D numpy array with a length and width specified by user inputted rows and columns. Every cell that is
 visited is placed into a list, starting with the top left cell. The visited list is shuffled and iterated through, and for each cell in 
@@ -57,12 +57,12 @@ making paths through them in this same manner until the length of the visited li
 every cell has been visited. The main 2D numpy array then has each index of each cells' 4x4 array copied into its own index of a new array
 4 times the width and height of the wall/path array, with each index taking a 1x3 numpy array storing the RGB values entered by the user.
 This array is then returned to the main function.
-###2. Scaling the Maze
+### 2. Scaling the Maze
 Since the maze isn't just supposed to be an abstract object but an actual image, the array is scaled up since each index now represents a 
 pixel on the image. I found a scale factor of 10 seemed to be sufficient in not blowing an image up too big but also giving the wavy and 
 jagged textures enough room to show their shape. This uses a numpy function, kron, to scale the image and to ensure the data type of each
 index is UINT8, since thats what MatPlotLib needs to save the image as a PNG. 
-###3. Pad the sides
+### 3. Pad the sides
 This just expands the maze borders by 30 pixels each using another numpy function, pad. 
 ###4. Apply Texture
 If the user selected straight, the maze continues as is. If they selected Wavy or Jagged, a process follows. 2D arrays within the current 3D 
@@ -71,7 +71,7 @@ of a given frequency times the current index or the row/column being rolled, and
 better. This happens once for horizontal rolling and once for vertical rolling, but both results are stored in a separate 3D array. A 3rd 3D
 array is made by taking some elements from one rolled pixel array and some elements from another on numerous conditions. This seemingly 
 redundant portion is actually extremely important to avoid wave distortion. 
-###5. Blur
+### 5. Blur
 The blur effect is a relatively standard Gaussian Blur implementation. It goes cell by cell and takes a square with a side length double the 
 given value. The average of all colors within the square is taken, and then applied to the individual cell. This is without a doubt the 
 slowest part of the entire program and surely must have some room for improvement. 
