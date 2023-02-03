@@ -26,7 +26,7 @@ Just download the source and set up a virtual environment using `requirements.tx
 3. Unzip the file into whatever folder you like
 
 4. Open the Command Prompt (or if on Mac/Linux, the equivalent terminal) and [Navigate](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/#ftoc-heading-3) to the same folder you extracted the repository into.
-This should be the same folder that contains `editor_site.py` as well as the rest of the scripts.
+This should be the same folder that contains `main.py` as well as the rest of the scripts.
 
 5. Create a Virtual Environment
 Use `python -m venv ./venv` to create a Virtual Environment for the program to run in. You can technically skip this if you really wanted to,  but a virtual environment is best practice.
