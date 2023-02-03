@@ -64,7 +64,7 @@ jagged textures enough room to show their shape. This uses a numpy function, kro
 index is UINT8, since thats what MatPlotLib needs to save the image as a PNG. 
 ### 3. Pad the sides
 This just expands the maze borders by 30 pixels each using another numpy function, pad. 
-###4. Apply Texture
+### 4. Apply Texture
 If the user selected straight, the maze continues as is. If they selected Wavy or Jagged, a process follows. 2D arrays within the current 3D 
 pixel array are "rolled" increasing or decreasing the indicies of all elements by a value that is the product of a given amplitude, sin value
 of a given frequency times the current index or the row/column being rolled, and a given offset used to line up the curves with the maze a bit
@@ -75,5 +75,5 @@ redundant portion is actually extremely important to avoid wave distortion.
 The blur effect is a relatively standard Gaussian Blur implementation. It goes cell by cell and takes a square with a side length double the 
 given value. The average of all colors within the square is taken, and then applied to the individual cell. This is without a doubt the 
 slowest part of the entire program and surely must have some room for improvement. 
-###6. Export 
+### 6. Export 
 The numpy array is saved into an image using MatPlotLib's image package and uses Python's os package to determine where to save the mazes.
